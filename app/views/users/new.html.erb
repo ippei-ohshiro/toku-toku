@@ -1,0 +1,63 @@
+
+    <div class="center jumbotron">
+      <div class="text-center">
+        <h1>Welcome to the Toku-Toku</h1>
+      </div>
+    </div>
+    
+    <div class="text-center mb-5">
+        <h2>無料会員登録でもっと便利に！</h2>
+    </div>
+    
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <h5>気になる場所をお気にりに保存</h5>
+                <p>気になるスポットを登録し、リストとして管理
+                <br>できる「保存」機能をお使いいただけます。</p>
+            </div>
+            
+            <div class="col-md-6 text-center">
+                <h5>スポットの口コミを投稿して友達と共有</h5
+                <p>あなたが実際に訪問した場所の口コミを投稿、
+                <br>友達と共有ができます。あなたの口コミ・評価
+                <br>がみんなのスポット選びの参考になります。</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="text-center">
+      <h1>新規登録</h1>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+    
+        <%= form_with(model: @user, local: true) do |f| %>
+        
+          <%= render 'layouts/error_messages', model: f.object %>
+          
+          <div class="form-group">
+            <%= f.label :name, '名前' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+    
+          <div class="form-group">
+            <%= f.label :email, 'Email' %>
+            <%= f.email_field :email, class: 'form-control' %>
+          </div>
+    
+          <div class="form-group">
+            <%= f.label :password, 'パスワード' %>
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+    
+          <div class="form-group">
+            <%= f.label :password_confirmation, '確認用パスワード' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+    
+          <%= f.submit 'Sign up', class: 'btn btn-primary btn-block' %>
+        <% end %>
+      </div>
+    </div>

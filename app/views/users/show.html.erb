@@ -1,0 +1,18 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <img class="mr-2 rounded" src="<%= gravatar_url(@user) %>" alt="">
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-sm-8">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="#" class="nav-link">お気に入り</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">フォロー</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">フォロワー</a></li>
+    </ul>
+  </div>
+</div>
