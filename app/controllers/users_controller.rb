@@ -17,18 +17,19 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = 'Toku-Tokuへようこそ！'
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = 'メールを送信しました。本文から登録を完了してください'
+      redirect_to root_url
     else
       flash.now[:danger] = 'ユーザの登録に失敗しました。'
-      render :new
+      render 'new'
     end
   end
   
   def edit
     @user = User.find(params[:id])
   end
+  
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
