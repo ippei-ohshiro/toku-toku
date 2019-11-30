@@ -1,4 +1,8 @@
 <h1 class= "text-center mb-5">名所一覧</h1>
+<div>
+  <h5>検索結果</h5>
+  <h5>全<%= @count %>件のスポットが見つかりました</h5>
+</div>
 <ul class="list-unstyled">
   <% @spots.each do |spot| %>
     <li class="media mb-3">

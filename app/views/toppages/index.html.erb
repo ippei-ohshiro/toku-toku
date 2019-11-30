@@ -7,40 +7,43 @@
 </div>
 
 <!--ここに検索-->
-
+<%= render "spots/serch"%>
 <div class="mb-5">
     <%= link_to "全ての名所を見る", spots_path %>
 </div>
 
-<div class="">
-    <div>
-        <h2>エリア別に探す</h2>
-    </div>
+
+<div>
+    <h2>エリア別に探す</h2>
+</div>
     
-    <div class="mb-5">
-        <li class=""><a href="#">徳島市</a></li>
-        <li class=""><a href="#">鳴門市</a></li>
-        <li class=""><a href="#">小松島市</a></li>
-        <li class=""><a href="#">阿南市</a></li>
-        <li class=""><a href="#">吉野川市</a></li>
-        <li class=""><a href="#">阿波市</a></li>
-        <li class=""><a href="#">美馬市</a></li>
-        <li class=""><a href="#">三好市</a></li>
-        <li class=""><a href="#">勝浦町</a></li>
-        <li class=""><a href="#">上勝町</a></li>
-        <li class=""><a href="#">佐那河内村</a></li>
-        <li class=""><a href="#">石井町</a></li>
-        <li class=""><a href="#">神山町</a></li>
-        <li class=""><a href="#">那珂町</a></li>
-        <li class=""><a href="#">牟岐町</a></li>
-        <li class=""><a href="#">美波町</a></li>
-        <li class=""><a href="#">海陽町</a></li>
-        <li class=""><a href="#">松茂町</a></li>
-        <li class=""><a href="#">北島町</a></li>
-        <li class=""><a href="#">藍住町</a></li>
-        <li class=""><a href="#">板野町</a></li>
-        <li class=""><a href="#">上板町</a></li>
-        <li class=""><a href="#">つるぎ町</a></li>
-        <li class=""><a href="#">東みよし市</a></li>
+<div class="card mb-5" style="width: 26rem;">
+    <div class="card-body">
+        <%= link_to '徳島市',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'徳島市'}}%> |
+        <%= link_to '鳴門市',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'鳴門市'}}%> |
+        <%= link_to '小松島市',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'小松島市'}}%> |
+        <%= link_to '阿南市',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'阿南市'}}%> |
+        <%= link_to '吉野川市',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'吉野川市'}}%> |
+        <br>
+        <%= link_to '阿波市',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'阿波市'}}%> |
+        <%= link_to '美馬市',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'美馬市'}}%> |
+        <%= link_to '三好市',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'三好市'}}%> |
+        <%= link_to '勝浦町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'勝浦町'}}%> |
+        <%= link_to '上勝町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'上勝町'}}%> |
+        <br>
+        <%= link_to '佐那河内村',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'佐那河内村'}}%> |
+        <%= link_to '石井町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'石井町'}}%> |
+        <%= link_to '神山町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'神山町'}}%> |
+        <%= link_to '那賀町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'那賀町'}}%> |
+        <%= link_to '牟岐町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'牟岐町'}}%> |
+        <br>
+        <%= link_to '美波町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'美波町'}}%> | 
+        <%= link_to '海陽町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'海陽町'}}%> |
+        <%= link_to '松茂町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'松茂町'}}%> |
+        <%= link_to '北島町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'藍住町'}}%> |
+        <%= link_to '板野町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'板野町'}}%> |
+        <%= link_to '上板町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'上板町'}}%> |
+        <%= link_to 'つるぎ町',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'つるぎ町'}}%> |
+        <%= link_to '東みよし市',{:controller=>"spots",:action=>"index",:q=>{:address_cont=>'東みよし市'}}%> 
     </div>
 </div>

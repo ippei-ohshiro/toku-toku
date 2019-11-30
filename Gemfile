@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'activeadmin'
 gem 'devise'
+gem 'ransack'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

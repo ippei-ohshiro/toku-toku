@@ -1,6 +1,8 @@
 class SpotsController < ApplicationController
   def index
-    @spots = Spot.order(id: :desc).page(params[:page]).per(10)
+    @search = Spot.search(params[:q])
+    @spots = @search.result.order(id: :desc).page(params[:page]).per(10)
+    @count = @spots.count
   end
 
   def show
