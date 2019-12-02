@@ -13,3 +13,11 @@
  *= require_directory .
  *= require_self
  */
+.jumbotron-extend {
+position: relative;
+    border-radius: 0 !important;
+    height: 80vh;
+    min-height: 300px;
+    background: url(top2.jpg) no-repeat center center;
+    background-size: cover;
+}

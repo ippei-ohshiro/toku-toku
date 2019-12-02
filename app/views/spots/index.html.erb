@@ -1,15 +1,15 @@
-<h1 class= "text-center mb-5">名所一覧</h1>
-<div>
+<div class="container">
+  <h1 class= "text-center mb-5">名所一覧</h1>
   <h5>検索結果</h5>
   <h5>全<%= @count %>件のスポットが見つかりました</h5>
-</div>
-<ul class="list-unstyled">
-  <% @spots.each do |spot| %>
-    <li class="media mb-3">
+  <ul class="list-unstyled">
+    <% @spots.each do |spot| %>
+      <li class="media mb-3">
         <div class="media-body">
              <%= link_to spot.name, spot_path(spot) %>
         </div>
-    </li>
-  <% end %>
-  <%= paginate @spots %>
-</ul>
+      </li>
+    <% end %>
+    <%= paginate @spots %>
+  </ul>
+</div>

@@ -1,15 +1,23 @@
-<h1 class="text-center mb-5"><%= @spot.name %></h1>
- 
-
-<article class="mt-5">
-    <table class="mb-5">
-        <tbody>
-            <tr>
-                <td>住所</td>
-                <td><%= @spot.address %></td>
-            </tr>
-        </tbody>
-    </table>
-        <h3><%= @spot.name%>の情報</h3>
-        <p><%= @spot.description %></p>
-</article>
+<div class="container">
+    
+    <h1 class="text-center mb-5"><%= @spot.name %></h1>
+     
+    <div class="text-center">
+        <% if @spot.image.attached? %>
+          <%= image_tag @spot.image, :size =>'800x500' %>
+        <% end %>
+    </div> 
+    
+    <article class="mt-5">
+        <table class="mb-5">
+            <tbody>
+                <tr>
+                    <td>住所</td>
+                    <td><%= @spot.address %></td>
+                </tr>
+            </tbody>
+        </table>
+            <h3><%= @spot.name%>の情報</h3>
+            <p><%= @spot.description %></p>
+    </article>
+</div>
