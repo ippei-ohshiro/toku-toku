@@ -31,6 +31,7 @@ gem 'faker'
 gem 'activeadmin'
 gem 'devise'
 gem 'ransack'
+gem "aws-sdk-s3", require: false
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
