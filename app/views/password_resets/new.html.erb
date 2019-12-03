@@ -1,0 +1,19 @@
+<% provide(:title, "Forgot password") %>
+
+<div class="container">
+    
+    <h1 class="text-center mb-5">パスワードの再設定</h1>
+    <p class="text-center">以下のフォームに、ご登録のメールアドレスを入力してください。</p>
+    
+    <div class="row mb-5">
+        <div class="col-sm-6 offset-sm-3">
+            <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+            <div class="form-group">
+                <%= f.label :email, 'Email' %>
+                <%= f.email_field :email, class: 'form-control' %>
+            </div>
+                <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
+            <% end %>
+        </div>
+    </div>
+</div>
