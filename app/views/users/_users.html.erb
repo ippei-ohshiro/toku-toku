@@ -1,6 +1,4 @@
-<h1 class="text-center mb-5">全てのユーザー</h1>
 <% if users.any? %>
-  <%= paginate users %>
   <ul class="list-unstyled mt-5 mb-5">
     <% users.each do |user| %>
       <li class="media border-bottom mb-3">

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:show, :edit, :update]
+  before_action :logged_in_user, only: [:show, :edit, :update, :followings, 
+                                        :followers]
   before_action :correct_user,   only: [:edit, :update, :destroy]
   
   def index
@@ -40,7 +41,18 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-
+  
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page]).per(5)
+    counts(@user)
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers.page(params[:page]).per(5)
+    counts(@user)
+  end
   
   private
   #ストロングパラメーター
