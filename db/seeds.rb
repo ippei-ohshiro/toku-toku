@@ -17,7 +17,7 @@ User.create!(name:  "Example User",
                activated_at: Time.zone.now)
 end
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 10.times do |n|
   Spot.create(name:  "test",

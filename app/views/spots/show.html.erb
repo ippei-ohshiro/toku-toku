@@ -19,5 +19,8 @@
         </table>
             <h3><%= @spot.name%>の情報</h3>
             <p><%= @spot.description %></p>
+            <% if logged_in? %>
+                <%= render 'favorites/like_button', spot: @spot %>
+            <% end %>
     </article>
 </div>

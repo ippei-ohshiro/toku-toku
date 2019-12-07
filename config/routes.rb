@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'relationships/create'
-  get 'relationships/destroy'
-  get 'password_resets/new'
-  get 'password_resets/edit'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
@@ -18,6 +13,7 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      get :likes
     end
     collection do
       get :search
@@ -28,4 +24,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :spots, only: [:index, :show]
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :relationships, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy]
 end
