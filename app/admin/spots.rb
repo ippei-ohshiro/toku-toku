@@ -17,7 +17,6 @@ form do |f|
     f.input :address
     f.input :description
     f.input :image, as: :file
-    f.input :photo, as: :file, input_html: { multiple: true }
     f.actions
   end
 end

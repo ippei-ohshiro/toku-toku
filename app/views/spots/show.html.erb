@@ -1,15 +1,14 @@
+<% provide(:title, @spot.name) %>
 <div class="container">
-    
     <h1 class="text-center mb-5"><%= @spot.name %></h1>
-     
     <div class="text-center">
         <% if @spot.image.attached? %>
           <%= image_tag @spot.image, :size =>'800x500' %>
         <% end %>
     </div> 
-    
     <article class="mt-5">
-        <table class="mb-5">
+        <table class="mb-2">
+            <h3><%= @spot.name%>の情報</h3>
             <tbody>
                 <tr>
                     <td>住所</td>
@@ -17,10 +16,34 @@
                 </tr>
             </tbody>
         </table>
-            <h3><%= @spot.name%>の情報</h3>
             <p><%= @spot.description %></p>
-            <% if logged_in? %>
-                <%= render 'favorites/like_button', spot: @spot %>
-            <% end %>
     </article>
+    <% if logged_in? %>
+        <%= render 'favorites/like_button', spot: @spot %>
+    <br>
+    <h3>コメント一覧</h3>
+        <%= render 'spots/review', comments: @comments %>
+  　　　　
+        <!--口コミ投稿フォーム-->
+        <div class="jumbotron bg-light">
+            <h4>口コミを投稿する</h4>
+            <%= form_with model: [@spot, @comment], local: true do |f| %>
+                <div class="form-group">
+                    <%= f.label :title, "タイトル"%>
+                    <%= f.text_field :title, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                    <%= f.label :content, "コメント"  %>
+                    <%= f.text_area :content, class: "form-control" %>
+                </div>
+            
+                <%= f.submit 'コメントする', class: "btn btn-primary" %>
+            <% end %>
+        </div>
+    <% else %>
+        <div class="text-center">
+            <h5 class="mt-5">口コミお気に入り機能を使うにはログインしてください</h5>
+            <p>会員登録がまだの方は　→　<%= link_to '会員登録', signup_path %>　</p>
+        </div>
+    <% end %>
 </div>

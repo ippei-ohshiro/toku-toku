@@ -19,6 +19,8 @@ class User < ApplicationRecord
   #お気に入り機能追加用
   has_many :favorites
   has_many :favposts, through: :favorites, source: :spot
+  #コメント機能追加用
+  has_many :comments
 
   
   def follow(other_user)

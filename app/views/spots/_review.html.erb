@@ -1,0 +1,14 @@
+<!--口コミ-->
+
+<% comments.each do |c| %>
+    <div class="mb-3 card">
+        <div class="card-body">
+            <% unless c.user.blank? %>
+                <h5 class="card-title"><%= c.title %></h5>
+                <p>投稿者：<%= link_to c.user.name, user_path(c.user_id)%></p>
+                <%= c.content %>
+            <% end %>
+        </div>
+    </div>
+<% end %>
+<%= paginate comments %>

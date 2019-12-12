@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   
   resources :relationships, only: [:create, :destroy]
   resources :account_activations, only: [:edit]
-  resources :spots, only: [:index, :show]
+  resources :spots, only: [:index, :show] do
+    resources :comments, only: [:create]
+  end
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :relationships, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]

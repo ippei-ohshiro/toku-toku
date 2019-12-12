@@ -1,8 +1,11 @@
 class Spot < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   #お気に入り機能追加用中間テーブル追加
   has_many :favorites, foreign_key: 'spot_id', dependent: :destroy
   has_many :users, through: :favorites
+  #コメント機能追加用中間テーブル追加
+  has_many :comments
+  
   has_one_attached :image
     
   validates :name, presence: true, length: { maximum: 50 }
