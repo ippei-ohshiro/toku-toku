@@ -1,24 +1,22 @@
-# README
+# 概要
+Toku-Tokuは徳島県の名所（SPOT）を集めたポータルサイトです。
+食べログみたいなサイトを作りたいと思い作成しました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 何ができるのか？（機能）
 
-Things you may want to cover:
+user登録/ログイン機能
+active_adminによるSPOT作成/編集/削除
+キーワード検索機能
+エリア別検索機能
+SPOTコメント機能
+SPOTお気にり機能
+フォロー/アンフォロー機能
 
-* Ruby version
 
-* System dependencies
+# どうやってできているのか？（技術）
+以下の技術を使用しています。
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby on Rails 
+Heroku
+Bootstarp
+S3（SPOT画像置き場）
